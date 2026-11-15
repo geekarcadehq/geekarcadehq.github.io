@@ -23,7 +23,7 @@ background:linear-gradient(90deg,#00F0FF,#965AFF,#FF2EA0);-webkit-background-cli
 @keyframes b{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @media (prefers-reduced-motion:reduce){.balls i{animation:none}}
 footer{margin-top:22px;font-family:"Press Start 2P",monospace;font-size:9px;letter-spacing:.12em;color:#7D74A3}.vc{margin:10px 0 0;font-size:11px;opacity:.55;letter-spacing:.08em}
-</style></head><body><main class="wrap">
+.cnt{display:block;font-size:12px;opacity:.85;margin-top:2px}</style></head><body><main class="wrap">
 <img class="av" src="avatar.png" alt="Geek Arcade logo" width="112" height="112">
 <h1>GEEK ARCADE</h1>
 <p class="tag">Pick your ball. Watch it race, bounce and escape.</p>
@@ -39,4 +39,5 @@ footer{margin-top:22px;font-family:"Press Start 2P",monospace;font-size:9px;lett
 function hit(k){try{fetch(A+"hit",{method:"POST",keepalive:true,headers:{"Content-Type":"text/plain"},body:JSON.stringify({brand:B,link:k})});}catch(e){}}
 hit("view");
 document.querySelectorAll(".lk").forEach(function(a){a.addEventListener("click",function(){hit(a.getAttribute("data-k"));});});
-fetch(A+"views?brand="+B).then(function(r){return r.json()}).then(function(d){if(d&&d.views>0)document.getElementById("vc").textContent=d.views.toLocaleString("en-GB")+" visits";}).catch(function(){});})();</script></body></html>
+fetch(A+"views?brand="+B).then(function(r){return r.json()}).then(function(d){if(d&&d.views>0)document.getElementById("vc").textContent=d.views.toLocaleString("en-GB")+" visits";}).catch(function(){});})();</script><script>(function(){var BR="Dodgy";fetch("https://geek-network-live.techygeeks.workers.dev/counts").then(function(r){return r.json()}).then(function(d){var c=((d&&d.counts)||{})[BR]||{};function f(n){return n>=1e6?(n/1e6).toFixed(1).replace(/\.0$/,"")+"M":n>=1e4?Math.round(n/1e3)+"K":n>=1e3?(n/1e3).toFixed(1).replace(/\.0$/,"")+"K":String(n)}
+document.querySelectorAll(".lk[data-k]").forEach(function(a){var p=a.getAttribute("data-k"),n=c[p];if(n==null||n<10)return;var s=a.querySelector(".cnt")||document.createElement("span");s.className="cnt";s.textContent=f(n)+(p=="youtube"?" subscribers":" followers");a.querySelector(".tx").appendChild(s);});}).catch(function(){});})();</script></body></html>
